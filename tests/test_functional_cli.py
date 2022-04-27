@@ -4,6 +4,7 @@ from beerlog.cli import main
 
 runner = CliRunner()
 
+
 def test_add_beer():
     result = runner.invoke(
         main, ["add", "Skol", "KornIPA", "--flavor=1", "--image=2", "--cost=3"]

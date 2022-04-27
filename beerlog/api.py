@@ -1,11 +1,12 @@
 from typing import List, Optional
 from fastapi import FastAPI, Response, status
-from beerlog.core  import get_beers_from_database
+from beerlog.core import get_beers_from_database
 from beerlog.serializers import BeerOut, BeerIn
 from beerlog.models import Beer
 from beerlog.database import get_session
 
 api = FastAPI(title="Beerlog")
+
 
 @api.get("/beers", response_model=List[BeerOut])
 async def list_beers(style: Optional[str] = None):

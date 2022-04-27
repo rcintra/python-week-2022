@@ -2,6 +2,7 @@ from pydantic import BaseModel, validator
 from datetime import datetime
 from fastapi import HTTPException, status
 
+
 class BeerOut(BaseModel):
     id: int
     name: str
@@ -13,7 +14,7 @@ class BeerOut(BaseModel):
     date: datetime
 
 
-class BeerIn(BaseModel):    
+class BeerIn(BaseModel):
     name: str
     style: str
     flavor: int
@@ -27,4 +28,4 @@ class BeerIn(BaseModel):
                 detail=f"{field.name} must be between 1 and 10",
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
-        return v   
+        return v
